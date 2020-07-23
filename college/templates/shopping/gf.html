@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="/tomato/results">
+    <h1>Ennter your gf</h1>
+    {{form.as_p}}
+    {%csrf_token%}
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

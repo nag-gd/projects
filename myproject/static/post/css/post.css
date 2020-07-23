@@ -1,0 +1,14 @@
+.side-bar{
+    width:15%;
+    float: left;
+    background-color: lightslategray;
+    
+
+}
+
+.main{
+    width:85%;
+    float: right;
+    background-color: rgb(218, 218, 224);
+
+}

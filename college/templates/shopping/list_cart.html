@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'shopping/index.html' %}
+
+{% block index %}
+
+
+{% if request.session %}
+
+
+<div class='container' align='center' >
+    <h1>Your cart list</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key,value in request.session.items %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+          </tr>
+          {% endfor %}
+{%else%}
+<h1>No list available</h1>
+        </tbody>
+    </table>
+    {% csrf_token%}
+  </div>
+  
+  
+  {%endif%}
+
+
+{% endblock %}
+
+

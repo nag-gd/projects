@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'myapp/home.html'%}
+{%block head%}
+<title>My App | Update Friends</title>
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'myapp/css/ud_friend.css' %}">
+<!--<script src="{% static 'myapp/js/friends.js' %}"></script> -->
+
+{%endblock%}
+
+{%block body%}
+
+<div class="card" style="width: 20rem; left:40%; top: 5rem;">
+ <form method="POST">{%csrf_token%}
+    <label for="1">Name</label>
+    <input  type="txt" class="form-control" name="name" value="{{f.name}}" id="1">
+    <label for="2">Profession</label>
+    <input type="txt" class="form-control" name="profession" value="{{f.profession}}" id="2">
+    <label for="3">Organization</label>
+    <input type="text" class="form-control" name="organization" value="{{f.organization}}" id="3">
+    <label for="4">Working city</label>
+    <input type="text" class="form-control" name="working_city" value="{{f.working_city}}" id="4">
+    <label for="5">Phone</label>
+    <input type="intiger" class="form-control" name="phone" value="{{f.phone}}" id="5">
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+{%endblock%}

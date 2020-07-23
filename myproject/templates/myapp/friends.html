@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%extends 'myapp/home.html'%}
+{%block head%}
+<title>My App | Friends</title>
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'myapp/css/friends.css' %}">
+<script src="{% static 'myapp/js/friends.js' %}"></script>
+
+{%endblock%}
+
+{%block body%}
+
+<div class="table-users">
+    <div class="header">Friends</div>
+    
+    <table cellspacing="0">
+       <tr>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Profession</th>
+          <th>organization</th>
+          <th>working_city</th>
+          <th>Phone</th>
+          <th>Update</th>
+          <th>Remove</th>
+       </tr>
+ {% for f in friends_list %}
+       <tr>
+          <td><img src="{% static 'myapp/img/beer.png' %}" alt="" /></td>
+          <td>{{f.name}}</td>
+          <td>{{f.profession}}</td>
+          <td>{{f.organization}}</td>
+          <td>{{f.working_city}}</td>
+          <td>{{f.phone}}</td>
+          <td><a href="/ud_friend/{{f.id}}">Update</a></td>
+          <td><a href="/del_friend/{{f.id}}">Remove</a></td>
+       </tr>
+ 
+{%endfor%}
+    </table>
+</div>
+<a class='btn btn-success btn-lg adf' href="/add_friends">Add Friend</a>
+{%endblock%}

@@ -1,0 +1,9 @@
+.container-player {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(80, 175, 139);
+  color: rgb(255, 255, 255);
+  bottom: 0rem;
+
+  outline-color: lightcoral;
+}

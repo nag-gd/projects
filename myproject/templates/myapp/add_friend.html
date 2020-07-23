@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'myapp/home.html'%}
+{%block head%}
+<title>My App | Add Friend</title>
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'myapp/css/add_friends.css' %}">
+<!--<script src="{% static 'myapp/js/friends.js' %}"></script> -->
+
+
+
+{%endblock%}
+
+{%block body%}
+<div class="login-box">
+    <h2>Add friends</h2>
+    <form method="POST">
+      <div class="user-box">
+        {{a_form.as_p}}
+        {%csrf_token%}
+      </div>
+      <button type="submit">Add</button>
+
+    </form>
+  </div>
+
+
+{%endblock%}
+
+
